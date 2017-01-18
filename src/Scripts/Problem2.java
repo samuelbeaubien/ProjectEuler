@@ -29,7 +29,7 @@ public class Problem2 {
 	public static void main(String[] args)
 	{
 		
-		int testAnswer = sumEvenFibonacci(1, 2, 90);
+		int testAnswer = sumEvenFibonacci(1, 2, 4000000);
 		// should be 44
 		
 		System.out.println(testAnswer);
