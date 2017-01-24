@@ -1,24 +1,29 @@
 package Scripts;
 import java.util.ArrayList;
 import java.lang.*;
+import java.math.BigInteger;
 
 public class Problem3 {
 
 	public static void main(String[] args)
 	{
 	
+		long x = 13195;
+	
 		ArrayList<Integer> listPrimes = findPrimeFactors(13195, 1);
+		
+		System.out.println(listPrimes);
 		
 	}
 	
 	
-	private static ArrayList<Integer> findPrimeFactors(int unFactoredNumber, int factorArray)
+	private static ArrayList<Integer> findPrimeFactors(long unFactoredNumber, int factorArray)
 	{
 		//Initialize list possible primes and list prime factor
 		ArrayList<Integer> arrayPrimes = generatePrimes((int)Math.sqrt(unFactoredNumber) * factorArray );
 		ArrayList<Integer> arrayPrimeFactors = new ArrayList<Integer>();
 		
-		int currentNumber = unFactoredNumber; 
+		long currentNumber = unFactoredNumber; 
 		
 		// currentNumber is divisible by a prime, currentNumber becomes result of division and 
 		// 
@@ -71,8 +76,6 @@ public class Problem3 {
 		}
 		
 		ArrayList<Integer> arrayPrimes = new ArrayList<Integer>();
-		arrayPrimes.add(0);
-		arrayPrimes.add(1);
 		
 		while (arrayNumbers.size() > 0)
 		{
