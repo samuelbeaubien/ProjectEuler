@@ -28,49 +28,54 @@ public class Problem3 {
 		list.add(x8);
 		BigInteger x9 = new BigInteger("9");
 		list.add(x9);
-		BigInteger x10 = new BigInteger("100");
+		BigInteger x10 = new BigInteger("13195");
 		list.add(x10);
 
 		removeMultiple(list, x2);
 		
+		BigInteger BigOne = new BigInteger("1");
 		
 		ArrayList<BigInteger> list2 = generatePrimes(x10);
 		
+		ArrayList<BigInteger> list3 = findPrimeFactors(x10, BigOne);
 		
-		System.out.println(list2);
+		
+		System.out.println(list3);
 		
 		//ArrayList<BigInteger> listPrimes = findPrimeFactors(x, 1);
 		
 		//System.out.println(listPrimes);
 		
 	}
-	/*
 	
-	private static ArrayList<BigInteger> findPrimeFactors(BigInteger unFactoredNumber, int factorArray)
+	
+	private static ArrayList<BigInteger> findPrimeFactors(BigInteger unFactoredNumber, BigInteger factorArray)
 	{
 		//Initialize list of possible primes and list known factor
-		ArrayList<Integer> arrayPrimes = generatePrimes((int)Math.sqrt(unFactoredNumber) * factorArray );
-		ArrayList<Integer> arrayFactors = new ArrayList<Integer>();
+		ArrayList<BigInteger> arrayPrimes = generatePrimes(sqrt(unFactoredNumber).multiply(factorArray));
+		ArrayList<BigInteger> arrayFactors = new ArrayList<BigInteger>();
 		
-		long currentNumber = unFactoredNumber; 
+		BigInteger currentNumber = unFactoredNumber; 
 		
-		// currentNumber is divisible by a prime, currentNumber becomes result of division and 
-		// 
+		// If currentNumber is divisible by a prime in arrayPrimes, copy prime in arrayFactor
+		// 	and currentNumber = currentNumber / prime 
 		
+		BigInteger BigZero = new BigInteger("0");
 		for (int indexArrayPrimes = 0; indexArrayPrimes < arrayPrimes.size(); indexArrayPrimes++)
 		{
-			if (currentNumber % arrayPrimes.get(indexArrayPrimes) == 0)
+			if (currentNumber.mod(arrayPrimes.get(indexArrayPrimes)).compareTo(BigZero) == 0)
 			{
 				arrayFactors.add(arrayPrimes.get(indexArrayPrimes));
-				currentNumber = currentNumber / arrayPrimes.get(indexArrayPrimes);
+				currentNumber = currentNumber.divide(arrayPrimes.get(indexArrayPrimes));
+				indexArrayPrimes = 0;
 			}
 		}
-		
-		
+	
 		// Make sure the biggest have been found
-		if (currentNumber > 1)
+		BigInteger BigOne = new BigInteger("1");
+		if (currentNumber.compareTo(BigOne) > 0)
 		{
-			arrayFactors = findPrimeFactors(unFactoredNumber, (factorArray + 1));
+			arrayFactors = findPrimeFactors(unFactoredNumber, (factorArray.add(BigOne)));
 		}
 		
 		
@@ -79,7 +84,7 @@ public class Problem3 {
 	
 	
 	
-	*/
+	
 	
 	
 	
